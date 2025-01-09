@@ -1,4 +1,4 @@
-import Layout from "../layouts/Layout";
+import Layout from "../layouts/Layout/Layout";
 import Home from "../pages/Home/Home";
 import NotFound from "../pages/NotFound/NotFound";
 import Profile from "../pages/Profile/Profile";
