@@ -4,3 +4,22 @@
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   @apply transition-all duration-200;
 }
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  background: #fff;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  color: #000;
+  text-align: center;
+  line-height: 22px !important;
+  position: relative;
+  top: -12px;
+}
+
+.swiper-button-disabled {
+  display: none !important;
+}

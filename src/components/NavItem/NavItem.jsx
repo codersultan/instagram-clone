@@ -15,7 +15,7 @@ const NavItem = ({ title, iconLight, iconDark, path, photo }) => {
       }}
     >
       <div className="nav-item flex items-center gap-3">
-        <div title={title} className="nav-icon text-[1.8rem]">
+        <div title={title} className="nav-icon text-[1.8rem] text-black">
           {isActive ? iconDark : iconLight}
           {photo && (
             <img

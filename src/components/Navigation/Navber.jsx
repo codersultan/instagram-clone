@@ -10,25 +10,17 @@ import {
   IoSearch,
   IoSearchOutline,
 } from "react-icons/io5";
-import { FaCompass, FaRegCompass } from "react-icons/fa";
 import {
   BiBarChartSquare,
   BiMoviePlay,
   BiSolidBarChartSquare,
   BiSolidMoviePlay,
 } from "react-icons/bi";
-import {
-  PiPaperPlaneTilt,
-  PiPaperPlaneTiltFill,
-  PiPaperPlaneTiltLight,
-} from "react-icons/pi";
-import { IoMdHeartEmpty } from "react-icons/io";
-import { BsPlusSquare } from "react-icons/bs";
-import { FaRegSquarePlus, FaSquarePlus } from "react-icons/fa6";
-import { CiSquarePlus } from "react-icons/ci";
+
 import { AiFillPlusSquare, AiOutlinePlusSquare } from "react-icons/ai";
-import { TbLayoutDashboard } from "react-icons/tb";
-import { RiBarChartBoxFill, RiBarChartBoxLine } from "react-icons/ri";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { FiMenu } from "react-icons/fi";
+import { PiThreadsLogo } from "react-icons/pi";
 
 const Navber = () => {
   return (
@@ -121,17 +113,17 @@ const Navber = () => {
             <ul>
               <li>
                 <NavItem
-                  title="Home"
-                  iconLight={<GoHome />}
-                  iconDark={<GoHomeFill />}
-                  path="/"
+                  title="Threads"
+                  iconLight={<PiThreadsLogo />}
+                  iconDark={<PiThreadsLogo />}
+                  path="/threads"
                 />
               </li>
               <li>
                 <NavItem
-                  title="Search"
-                  iconLight={<IoSearchOutline />}
-                  iconDark={<IoSearch />}
+                  title="More"
+                  iconLight={<RxHamburgerMenu />}
+                  iconDark={<FiMenu />}
                   path="/search"
                 />
               </li>

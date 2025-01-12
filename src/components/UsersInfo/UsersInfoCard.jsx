@@ -1,15 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const UsersInfoCard = ({ userName, profileName, followedBy, btnText }) => {
+const UsersInfoCard = ({
+  userName,
+  profileName,
+  userPhoto,
+  followedBy,
+  btnText,
+}) => {
   return (
     <>
       <div className="user-info flex justify-between items-center">
         <div className="info-box flex items-center gap-3">
           <div className="user-photo">
             <img
-              className="w-11 h-11 rounded-full cursor-pointer"
-              src="../../../public/Kalimi.jpg"
+              className="w-11 h-11 rounded-full cursor-pointer object-cover"
+              src={userPhoto}
               alt=""
             />
           </div>

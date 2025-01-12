@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
-      <Footer>
-        <div className="footer-wrapper">
+      <div>
+        <div className="footer-wrapper ml-2 mt-5">
           <div className="footer-menu">
             <nav>
-              <ul className="flex flex-wrap">
+              <ul className=" flex flex-wrap gap-1 leading-none">
                 <li>
                   <Link
                     className="text-xs text-slate-400 hover:underline"
@@ -91,11 +91,11 @@ const Footer = () => {
               </ul>
             </nav>
           </div>
-          <div className="footer-copywrite">
-            <p className="text-sm text-slate-400">© 2025 Instagram from Meta</p>
+          <div className="footer-copywrite mt-5">
+            <p className="text-sm text-slate-300">© 2025 Instagram from Meta</p>
           </div>
         </div>
-      </Footer>
+      </div>
     </>
   );
 };
