@@ -2,23 +2,32 @@ import UsersInfoCard from "../../components/UsersInfo/UsersInfoCard";
 import { Link } from "react-router-dom";
 import Footer from "../../layouts/Footer/Footer";
 import StorySlider from "../../components/Story/StorySlider";
+import Post from "../../components/Post/Post";
 
 const Home = () => {
   return (
     <>
       <div className="home-page">
         <div className="container mx-auto px-64 mt-5 ">
-          <div className="home-wrapper flex justify-between gap-16 pr-4">
-            <div className="post-wrapper w-8/12">
-              <StorySlider />
+          <div className="home-wrapper flex">
+            <div className="post-wrapper w-[61.5%]">
+              <div className="story-section">
+                <StorySlider />
+              </div>
+              <div className="post-section mt-7">
+                <div className="post-wrapper w-9/12 mx-auto">
+                  <Post />
+                </div>
+              </div>
             </div>
-            <div className="users-wrapper w-4/12 pl-3 pr-4">
+            <div className="users-wrapper w-[38.5%] pl-3 pr-8 ml-16">
               <div className="personal-profile-info mt-4">
                 <UsersInfoCard
                   userPhoto="../../../public/Kalimi.jpg"
                   userName="codersultan"
                   profileName="Kalimi Sultan"
                   btnText="Switch"
+                  verify="true"
                 />
               </div>
 
@@ -43,6 +52,7 @@ const Home = () => {
                       userName="hakim"
                       followedBy="Followed by abdulalim19143 +..."
                       btnText="Switch"
+                      verify="true"
                     />
                   </div>
                   <div className="user-item py-2">

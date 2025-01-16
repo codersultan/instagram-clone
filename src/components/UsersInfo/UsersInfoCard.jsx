@@ -1,8 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import UserName from "./UserName";
 
 const UsersInfoCard = ({
   userName,
+  verify,
   profileName,
   userPhoto,
   followedBy,
@@ -20,11 +21,7 @@ const UsersInfoCard = ({
             />
           </div>
           <div className="user-meta">
-            {userName && (
-              <h2 className="text-sm font-semibold cursor-pointer">
-                {userName}
-              </h2>
-            )}
+            {userName && <UserName name={userName} verified={verify} />}
             {profileName && (
               <h2 className="-mt-[2px] text-sm font-normal text-slate-500">
                 {profileName}
