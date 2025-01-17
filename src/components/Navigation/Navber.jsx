@@ -1,5 +1,5 @@
 import { GoHome, GoHomeFill } from "react-icons/go";
-import NavItem from "../NavItem/NavItem";
+import NavItem from "./NavItem";
 import {
   IoCompass,
   IoCompassOutline,
@@ -21,8 +21,31 @@ import { AiFillPlusSquare, AiOutlinePlusSquare } from "react-icons/ai";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FiMenu } from "react-icons/fi";
 import { PiThreadsLogo } from "react-icons/pi";
+import Toggle from "../Modal/Toggle";
+import useToggle from "../../hooks/useToggle";
+import Modal from "../Modal/Modal";
 
 const Navber = () => {
+  const { toggle, setToggle, handleToggle, toggleRef } = useToggle();
+
+  const {
+    toggle: user,
+    setToggle: setUser,
+    handleToggle: handleUserToggle,
+  } = useToggle();
+
+  const {
+    toggle: post,
+    setToggle: setPost,
+    handleToggle: handlePostToggle,
+  } = useToggle();
+
+  const {
+    toggle: story,
+    setToggle: setStory,
+    handleToggle: handleStoryToggle,
+  } = useToggle();
+
   return (
     <>
       <div className="nav-bar grid grid-rows-[1fr,10fr,1fr] p-3 w-full h-screen border-r border-slate-300">
@@ -81,13 +104,56 @@ const Navber = () => {
                   path="/notifications"
                 />
               </li>
-              <li>
-                <NavItem
-                  title="Create"
-                  iconLight={<AiOutlinePlusSquare />}
-                  iconDark={<AiFillPlusSquare />}
-                  path="/create"
-                />
+              <li className="relative" ref={toggleRef}>
+                <button
+                  onClick={handleToggle}
+                  className="create cursor-pointer p-2.5 my-1 hover:bg-[#f2f2f2] inline-block w-full rounded-md"
+                >
+                  <div className="nav-item flex items-center gap-3">
+                    <div className="nav-icon text-[1.8rem] text-black">
+                      <AiOutlinePlusSquare />
+                    </div>
+                    <div>Create</div>
+                  </div>
+                </button>
+                {toggle && (
+                  <Toggle>
+                    <div className="sub-item border-b">
+                      <button
+                        onClick={handleUserToggle}
+                        className="w-full px-3 py-2 hover:bg-[#f2f2f2] flex justify-between items-center"
+                      >
+                        <div className="sub-title">User</div>
+                        <div className="sub-icon text-[1.8rem] text-black">
+                          <AiOutlinePlusSquare />
+                        </div>
+                      </button>
+                    </div>
+                    <div className="sub-item border-b">
+                      <button
+                        onClick={handlePostToggle}
+                        className="w-full px-3 py-2 hover:bg-[#f2f2f2] flex justify-between items-center"
+                      >
+                        <div className="sub-title">Post</div>
+                        <div className="sub-icon text-[1.8rem] text-black">
+                          <AiOutlinePlusSquare />
+                        </div>
+                      </button>
+                    </div>
+
+                    <div className="sub-item ">
+                      <button
+                        onClick={handleStoryToggle}
+                        className="w-full px-3 py-2 hover:bg-[#f2f2f2] flex justify-between items-center"
+                      >
+                        <div className="sub-title">Story</div>
+                        <div className="sub-icon text-[1.8rem] text-black">
+                          <AiOutlinePlusSquare />
+                        </div>
+                      </button>
+                    </div>
+                  </Toggle>
+                )}
               </li>
               <li>
                 <NavItem
@@ -106,6 +172,9 @@ const Navber = () => {
               </li>
             </ul>
           </nav>
+          {user && <Modal title="Create User" inside="true" />}
+          {post && <Modal title="Create Post" width="30%" />}
+          {story && <Modal title="Create Story" />}
         </div>
 
         <div className="setting-menu">

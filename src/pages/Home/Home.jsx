@@ -15,7 +15,7 @@ const Home = () => {
                 <StorySlider />
               </div>
               <div className="post-section mt-7">
-                <div className="post-wrapper w-9/12 mx-auto">
+                <div className="post-container w-9/12 mx-auto">
                   <Post />
                 </div>
               </div>

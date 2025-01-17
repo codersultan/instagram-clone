@@ -2,7 +2,7 @@ const UserName = ({ name, verified = false }) => {
   return (
     <>
       <div className="user-name flex items-center gap-1">
-        <h2 className="text-sm font-semibold cursor-pointer">{name}</h2>
+        <span className="text-sm font-semibold cursor-pointer">{name}</span>
 
         {verified && (
           <span>

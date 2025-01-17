@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 const StorySlider = () => {
   return (
     <>
-      <div className="story-slider">
+      <div className="story-slider ">
         <Swiper
           slidesPerView={8}
           spaceBetween={10}

@@ -2,7 +2,6 @@
 
 * {
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  @apply transition-all duration-200;
 }
 
 /* Swiper Slider Style */
@@ -36,4 +35,12 @@ span.swiper-pagination-bullet {
   background: rgba(256, 256, 256, 0.7);
   width: 6px;
   height: 6px;
+}
+
+.swiper {
+  z-index: -1 !important;
+}
+
+.layout .modal-wrapper {
+  z-index: 50;
 }

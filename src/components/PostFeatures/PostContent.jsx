@@ -15,18 +15,8 @@ const PostContent = () => {
   return (
     <>
       <div className="post-content rounded-[4px] overflow-hidden">
-        {slide && (
-          <div className="single-content">
-            <img
-              className="w-full"
-              src="https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-800x525.jpg"
-              alt=""
-            />
-          </div>
-        )}
-
         {!slide && (
-          <div className="multiple-content">
+          <div className="media-content">
             <div className="content-slider">
               <Swiper
                 slidesPerView={1}
