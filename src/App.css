@@ -38,9 +38,15 @@ span.swiper-pagination-bullet {
 }
 
 .swiper {
-  z-index: -1 !important;
+  /* z-index: -1 !important; */
 }
 
 .layout .modal-wrapper {
   z-index: 50;
+}
+
+.modal .post-image img {
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
 }

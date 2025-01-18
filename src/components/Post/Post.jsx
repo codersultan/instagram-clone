@@ -3,6 +3,7 @@ import Modal from "../Modal/Modal";
 import PostActions from "../PostFeatures/PostActions";
 import PostContent from "../PostFeatures/PostContent";
 import PostHeader from "../PostFeatures/PostHeader";
+import UserName from "../UsersInfo/UserName";
 
 const Post = () => {
   const { toggle: commentModal, handleToggle: handleCommentModal } =
@@ -19,7 +20,7 @@ const Post = () => {
               title="Golden Bridge"
             />
           </div>
-          <div className="post-body my-3">
+          <div className="post-body my-3 rounded-[4px] overflow-hidden">
             <PostContent />
           </div>
           <div className="post-footer">
@@ -63,7 +64,84 @@ const Post = () => {
               </div>
 
               {/* View All Comment Modal */}
-              {commentModal && <Modal width="76%" height="95%" />}
+              {commentModal && (
+                <Modal width="auto" height="95%">
+                  <div className="edit-modal w-full flex">
+                    <div className="post-photo-box w-8/12">
+                      <PostContent />
+                    </div>
+                    <div className="post-content-box w-4/12 max-w-[500px] !min-w-[450px] grid grid-rows-[60px,10fr,230px]">
+                      <div className="modal-head border-b pb-3 pt-2 px-4">
+                        <PostHeader
+                          photo="https://sicherheitsheld.de/images/primax/team/team-1.jpg"
+                          userName="codersultan"
+                          title="Golden Bridge"
+                        />
+                      </div>
+
+                      <div className="modal-body max-h-[628px] overflow-y-auto">
+                        <div className="comment-box">
+                          <div className="comment-item p-4">
+                            <div className="flex gap-3">
+                              <img
+                                className="w-8 h-8 rounded-full cursor-pointer object-cover"
+                                src="https://sicherheitsheld.de/images/primax/team/team-1.jpg"
+                                alt=""
+                              />
+                              <UserName name="codersultan" verified="true" />
+                            </div>
+                            <p className="text-sm ml-11">
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Perspiciatis blanditiis est illo nulla
+                              quidem exercitationem laudantium repellendus eos
+                              doloremque deserunt!
+                            </p>
+                          </div>
+
+                          <div className="comment-item p-4">
+                            <div className="flex gap-3">
+                              <img
+                                className="w-8 h-8 rounded-full cursor-pointer object-cover"
+                                src="https://sicherheitsheld.de/images/primax/team/team-1.jpg"
+                                alt=""
+                              />
+                              <UserName name="codersultan" verified="true" />
+                            </div>
+                            <p className="text-sm ml-11">
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Perspiciatis blanditiis est illo nulla
+                              quidem exercitationem laudantium repellendus eos
+                              doloremque deserunt!
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="modal-footer border-t ">
+                        <div className="modal-post-action p-4">
+                          <PostActions />
+                        </div>
+
+                        <div className="modal-post-comment border-t py-3 px-4">
+                          <form className="flex items-center gap-1">
+                            <textarea
+                              className="flex-1 text-sm py-1 outline-none h-10 overflow-hidden "
+                              type="text"
+                              placeholder="Add a comment..."
+                            />
+                            <button
+                              type="submit"
+                              className="text-sm font-semibold text-blue-500 hover:text-blue-700"
+                            >
+                              Post
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Modal>
+              )}
             </div>
           </div>
         </div>

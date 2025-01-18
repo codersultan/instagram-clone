@@ -13,7 +13,7 @@ const Modal = ({
 }) => {
   return (
     <div
-      className="modal-wrapper toggle-close z-50 bg-black/70 fixed left-0 top-0 w-full h-full flex justify-center items-center"
+      className="modal-wrapper toggle-close z-50 bg-black/70 fixed left-0 top-0 w-full h-full flex justify-center items-center "
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
@@ -22,7 +22,7 @@ const Modal = ({
         style={{ width, height, borderRadius: rounded }}
         className={`modal ${
           inside ? "relative" : ""
-        } bg-white shadow-lg ] overflow-hidden`}
+        } bg-white shadow-lg ] overflow-hidden max-w-[76%]`}
       >
         <div className={`modal-head  ${title ? "border-b pb-3 pt-2" : null}`}>
           <h2 id="modal-title" className="text-base text-center font-semibold">

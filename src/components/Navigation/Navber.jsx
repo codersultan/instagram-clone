@@ -1,4 +1,4 @@
-import { GoHome, GoHomeFill } from "react-icons/go";
+import { GoFileMedia, GoHome, GoHomeFill } from "react-icons/go";
 import NavItem from "./NavItem";
 import {
   IoCompass,
@@ -19,11 +19,14 @@ import {
 
 import { AiFillPlusSquare, AiOutlinePlusSquare } from "react-icons/ai";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { FiMenu } from "react-icons/fi";
+import { FiMenu, FiUsers } from "react-icons/fi";
 import { PiThreadsLogo } from "react-icons/pi";
 import Toggle from "../Modal/Toggle";
 import useToggle from "../../hooks/useToggle";
 import Modal from "../Modal/Modal";
+import { LuImagePlay } from "react-icons/lu";
+import { BsGraphUpArrow } from "react-icons/bs";
+import { MdAutoGraph } from "react-icons/md";
 
 const Navber = () => {
   const { toggle, setToggle, handleToggle, toggleRef } = useToggle();
@@ -124,8 +127,8 @@ const Navber = () => {
                         className="w-full px-3 py-2 hover:bg-[#f2f2f2] flex justify-between items-center"
                       >
                         <div className="sub-title">User</div>
-                        <div className="sub-icon text-[1.8rem] text-black">
-                          <AiOutlinePlusSquare />
+                        <div className="sub-icon text-[1.6rem] text-black">
+                          <LuImagePlay />
                         </div>
                       </button>
                     </div>
@@ -135,8 +138,8 @@ const Navber = () => {
                         className="w-full px-3 py-2 hover:bg-[#f2f2f2] flex justify-between items-center"
                       >
                         <div className="sub-title">Post</div>
-                        <div className="sub-icon text-[1.8rem] text-black">
-                          <AiOutlinePlusSquare />
+                        <div className="sub-icon text-[1.5rem] text-black">
+                          <FiUsers />
                         </div>
                       </button>
                     </div>
@@ -147,8 +150,8 @@ const Navber = () => {
                         className="w-full px-3 py-2 hover:bg-[#f2f2f2] flex justify-between items-center"
                       >
                         <div className="sub-title">Story</div>
-                        <div className="sub-icon text-[1.8rem] text-black">
-                          <AiOutlinePlusSquare />
+                        <div className="sub-icon text-[1.6rem] text-black">
+                          <MdAutoGraph />
                         </div>
                       </button>
                     </div>
@@ -172,8 +175,140 @@ const Navber = () => {
               </li>
             </ul>
           </nav>
-          {user && <Modal title="Create User" inside="true" />}
-          {post && <Modal title="Create Post" width="30%" />}
+
+          {user && (
+            <Modal title="Create new user" inside="true" rounded="12px">
+              <form className="w-full p-5">
+                <div>
+                  <label>
+                    <span className="font-medium text-slate-700">
+                      User Name
+                    </span>
+                    <input
+                      type="text"
+                      className="w-full outline-none px-3 py-2 border mt-1"
+                    />
+                  </label>
+                </div>
+
+                <div className="mt-3">
+                  <label>
+                    <span className="font-medium text-slate-700">
+                      User Photo
+                    </span>
+                    <input
+                      type="file"
+                      className="w-full outline-none px-3 py-2 border mt-1"
+                    />
+                  </label>
+                </div>
+
+                <div className="mt-3">
+                  <button
+                    type="submit"
+                    className="w-full font-semibold text-white bg-blue-500 hover:bg-blue-600 outline-none px-3 py-2.5 rounded-sm border mt-1"
+                  >
+                    Create User
+                  </button>
+                </div>
+              </form>
+            </Modal>
+          )}
+
+          {/* Create Post Modal */}
+          {post && (
+            <Modal title="Create new post" width="40%" rounded="12px">
+              <form className="w-full p-5">
+                <div>
+                  <label>
+                    <span className="font-medium text-slate-700">
+                      Anthor Name
+                    </span>
+                    <input
+                      type="text"
+                      className="w-full outline-none px-3 py-2 border mt-1"
+                    />
+                  </label>
+                </div>
+                <div className="mt-3">
+                  <label>
+                    <span className="font-medium text-slate-700">
+                      User Name
+                    </span>
+                    <input
+                      type="text"
+                      className="w-full lowercase outline-none px-3 py-2 border mt-1"
+                    />
+                  </label>
+                </div>
+
+                <div className="mt-3">
+                  <label>
+                    <span className="font-medium text-slate-700">Status</span>
+
+                    <select className="w-full outline-none px-3 py-2 border mt-1">
+                      <option value="" selected>
+                        - Select -
+                      </option>
+                      <option value="false">Unverified</option>
+                      <option value="true">Verified</option>
+                    </select>
+                  </label>
+                </div>
+                <div className="mt-3">
+                  <label>
+                    <span className="font-medium text-slate-700">
+                      Anthor Photo
+                    </span>
+                    <input
+                      type="file"
+                      className="w-full outline-none px-3 py-2 border mt-1"
+                    />
+                  </label>
+                </div>
+                <div className="mt-3">
+                  <label>
+                    <span className="font-medium text-slate-700">
+                      Post Title
+                    </span>
+                    <input
+                      type="text"
+                      className="w-full outline-none px-3 py-2 border mt-1"
+                    />
+                  </label>
+                </div>
+                <div className="mt-3">
+                  <label>
+                    <span className="font-medium text-slate-700">
+                      Post Content
+                    </span>
+
+                    <textarea className="w-full outline-none px-3 py-2 border mt-1"></textarea>
+                  </label>
+                </div>
+                <div className="mt-2">
+                  <label>
+                    <span className=" font-medium text-slate-700">
+                      Post Photo
+                    </span>
+                    <input
+                      type="file"
+                      className="w-full outline-none px-3 py-2 border mt-1"
+                    />
+                  </label>
+                </div>
+                <div className="mt-3">
+                  <button
+                    type="submit"
+                    className="w-full font-semibold text-white bg-blue-500 hover:bg-blue-600 outline-none px-3 py-2.5 rounded-sm border mt-1"
+                  >
+                    Create Post
+                  </button>
+                </div>
+              </form>
+            </Modal>
+          )}
+
           {story && <Modal title="Create Story" />}
         </div>
 

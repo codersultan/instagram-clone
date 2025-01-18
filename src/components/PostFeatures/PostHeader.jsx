@@ -3,8 +3,8 @@ import UserName from "../UsersInfo/UserName";
 import CreatedAt from "./CreatedAt";
 import Modal from "../Modal/Modal";
 import useToggle from "../../hooks/useToggle";
-import { AiOutlinePlusSquare } from "react-icons/ai";
 import Swal from "sweetalert2";
+import PostContent from "./PostContent";
 
 const PostHeader = ({ photo, userName, title }) => {
   const {
@@ -46,7 +46,7 @@ const PostHeader = ({ photo, userName, title }) => {
     <>
       <div className="post-header flex justify-between items-center">
         <div className="post-user flex items-center">
-          <div className="user-info flex items-center gap-2">
+          <div className="user-info flex items-center gap-3">
             <div className="user-photo">
               <img
                 className="w-8 h-8 rounded-full cursor-pointer object-cover"
@@ -120,7 +120,115 @@ const PostHeader = ({ photo, userName, title }) => {
             </Modal>
           )}
 
-          {edit && <Modal title="Post Edit" width="76%" height="95%" />}
+          {edit && (
+            <Modal width="auto" height="95%">
+              <div className="edit-modal w-full flex">
+                <div className="post-photo-box w-8/12">
+                  <PostContent />
+                </div>
+                <div className="post-content-box w-4/12 max-w-[500px] !min-w-[450px]">
+                  <div className="modal-head border-b pb-3 pt-2">
+                    <h2
+                      id="modal-title"
+                      className="text-base text-center font-semibold"
+                    >
+                      Edit post
+                    </h2>
+                  </div>
+                  <form className="w-full p-5">
+                    <div>
+                      <label>
+                        <span className="font-medium text-slate-700">
+                          Anthor Name
+                        </span>
+                        <input
+                          type="text"
+                          className="w-full outline-none px-3 py-2 border mt-1"
+                        />
+                      </label>
+                    </div>
+                    <div className="mt-3">
+                      <label>
+                        <span className="font-medium text-slate-700">
+                          User Name
+                        </span>
+                        <input
+                          type="text"
+                          className="w-full lowercase outline-none px-3 py-2 border mt-1"
+                        />
+                      </label>
+                    </div>
+
+                    <div className="mt-3">
+                      <label>
+                        <span className="font-medium text-slate-700">
+                          Status
+                        </span>
+
+                        <select className="w-full outline-none px-3 py-2 border mt-1">
+                          <option value="" selected>
+                            - Select -
+                          </option>
+                          <option value="false">Unverified</option>
+                          <option value="true">Verified</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div className="mt-3">
+                      <label>
+                        <span className="font-medium text-slate-700">
+                          Anthor Photo
+                        </span>
+                        <input
+                          type="file"
+                          className="w-full outline-none px-3 py-2 border mt-1"
+                        />
+                      </label>
+                    </div>
+                    <div className="mt-3">
+                      <label>
+                        <span className="font-medium text-slate-700">
+                          Post Title
+                        </span>
+                        <input
+                          type="text"
+                          className="w-full outline-none px-3 py-2 border mt-1"
+                        />
+                      </label>
+                    </div>
+                    <div className="mt-3">
+                      <label>
+                        <span className="font-medium text-slate-700">
+                          Post Content
+                        </span>
+
+                        <textarea className="w-full outline-none px-3 py-2 border mt-1 h-[250px]"></textarea>
+                      </label>
+                    </div>
+                    <div className="mt-2">
+                      <label>
+                        <span className=" font-medium text-slate-700">
+                          Post Photo
+                        </span>
+                        <input
+                          type="file"
+                          className="w-full outline-none px-3 py-2 border mt-1"
+                        />
+                      </label>
+                    </div>
+                    <div className="mt-3">
+                      <button
+                        type="submit"
+                        className="w-full font-semibold text-white bg-blue-500 hover:bg-blue-600 outline-none px-3 py-2.5 rounded-sm border mt-1"
+                      >
+                        Create Post
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </Modal>
+          )}
         </div>
       </div>
     </>

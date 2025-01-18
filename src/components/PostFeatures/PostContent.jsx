@@ -14,7 +14,7 @@ const PostContent = () => {
 
   return (
     <>
-      <div className="post-content rounded-[4px] overflow-hidden">
+      <div className="post-content overflow-hidden ">
         {!slide && (
           <div className="media-content">
             <div className="content-slider">
@@ -24,12 +24,12 @@ const PostContent = () => {
                 navigation={true}
                 pagination={true}
                 modules={[Navigation, Pagination]}
-                className="mySwiper"
+                className="mySwiper post-image"
               >
                 <SwiperSlide>
                   <img
                     className="w-full"
-                    src="https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-800x525.jpg"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7rd-L1O08jT63q1yKavoQA200iJbxFbKzhg&s"
                     alt=""
                   />
                 </SwiperSlide>
@@ -37,21 +37,21 @@ const PostContent = () => {
                 <SwiperSlide>
                   <img
                     className="w-full"
-                    src="https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-800x525.jpg"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7rd-L1O08jT63q1yKavoQA200iJbxFbKzhg&s"
                     alt=""
                   />
                 </SwiperSlide>
                 <SwiperSlide>
                   <img
                     className="w-full"
-                    src="https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-800x525.jpg"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7rd-L1O08jT63q1yKavoQA200iJbxFbKzhg&s"
                     alt=""
                   />
                 </SwiperSlide>
                 <SwiperSlide>
                   <img
                     className="w-full"
-                    src="https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-800x525.jpg"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7rd-L1O08jT63q1yKavoQA200iJbxFbKzhg&s"
                     alt=""
                   />
                 </SwiperSlide>
